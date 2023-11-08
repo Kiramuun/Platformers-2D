@@ -1166,7 +1166,7 @@ PrefabInstance:
       objectReference: {fileID: 9100000, guid: e86a4cb69de55604da6b28653f5c36b2, type: 2}
     - target: {fileID: 8238298592451299053, guid: 7b8ddf3cc0a1d9e4bb8adb28fe172865, type: 3}
       propertyPath: _forceJump
-      value: 10
+      value: 8
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:

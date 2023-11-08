@@ -10,6 +10,8 @@ public class DwarfScritp : MonoBehaviour
     public float _force,
                  _forceJump;
 
+    int _direction;
+
     bool _jump = false;
 
     void Start()
@@ -38,15 +40,41 @@ public class DwarfScritp : MonoBehaviour
         _dwarfRigid.AddForce(jumpVelocity, ForceMode2D.Impulse);
 
         _jump = false;
+
+        
     }
 
     void FixedUpdate()
     {
         _animatorRef.SetFloat("DwarfSpeedLine", Mathf.Abs(_dwarfRigid.velocity.x));
 
+        Vector3 moveVelocity = Vector3.zero;
+
         float horizontal = Input.GetAxisRaw("Horizontal");
        
-        if(horizontal > 0) { _dwarfRigid.AddForce(transform.right * _force,ForceMode2D.Impulse); }
-        if(horizontal < 0) { _dwarfRigid.AddForce(transform.right*-1 * _force, ForceMode2D.Impulse); }
+        if(horizontal > 0) 
+        {
+            _direction = 1;
+            moveVelocity = Vector3.left;
+
+            transform.localScale = new Vector3(_direction, 1, 1);
+            
+            _dwarfRigid.AddForce(transform.right * _force,ForceMode2D.Impulse); 
+        }
+
+        if(horizontal < 0) 
+        {
+            _direction = -1;
+            moveVelocity = Vector3.right;
+
+            transform.localScale = new Vector3(_direction, 1, 1);
+            
+            _dwarfRigid.AddForce(transform.right*-1 * _force, ForceMode2D.Impulse); 
+        }
+
+        if (_dwarfRigid.velocity.y < 0)
+        {
+            _animatorRef.SetBool("DwarfSpeedJump", false);
+        }
     }
 }
