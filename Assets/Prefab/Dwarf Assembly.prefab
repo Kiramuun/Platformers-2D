@@ -82,7 +82,7 @@ Rigidbody2D:
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
   m_Mass: 1
-  m_LinearDrag: 0
+  m_LinearDrag: 1
   m_AngularDrag: 0.05
   m_GravityScale: 1
   m_Material: {fileID: 0}
@@ -95,7 +95,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!70 &208779776090635796
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -146,7 +146,7 @@ MonoBehaviour:
   _animatorRef: {fileID: 8034472297950399240}
   _dwarfRigid: {fileID: 1059371342122415342}
   _force: 0.2
-  _forceJump: 0
+  _forceJump: 8
 --- !u!1 &1771825347266076356
 GameObject:
   m_ObjectHideFlags: 0
