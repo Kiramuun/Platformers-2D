@@ -57,7 +57,7 @@ public class DwarfScritp : MonoBehaviour
             _direction = 1;
             moveVelocity = Vector3.left;
 
-            transform.localScale = new Vector3(_direction, 1, 1);
+            transform.localScale = new Vector3(_direction, transform.localScale.y, transform.localScale.z);
             
             _dwarfRigid.AddForce(transform.right * _force,ForceMode2D.Impulse); 
         }
@@ -67,7 +67,7 @@ public class DwarfScritp : MonoBehaviour
             _direction = -1;
             moveVelocity = Vector3.right;
 
-            transform.localScale = new Vector3(_direction, 1, 1);
+            transform.localScale = new Vector3(_direction, transform.localScale.y, transform.localScale.z);
             
             _dwarfRigid.AddForce(transform.right*-1 * _force, ForceMode2D.Impulse); 
         }
