@@ -72,6 +72,11 @@ public class DwarfScritp : MonoBehaviour
         if (_dwarfRigid.velocity.y < 0)
         {
             _animatorRef.SetBool("DwarfSpeedJump", false);
+            //_dwarfRigid.gravityScale = 4;
         }
+        /*else
+        {
+            _dwarfRigid.gravityScale = 1;
+        }*/
     }
 }
